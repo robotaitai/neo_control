@@ -15,7 +15,7 @@ constexpr uint8_t FL_DIR_PIN = 17; // IN4 → DIR for Front-Left
 constexpr uint8_t RL_PWM_PIN = 25; // IN1→PWM   Rear-Left
 constexpr uint8_t RL_DIR_PIN = 26; // IN2→DIR
 
-constexpr uint8_t RR_PWM_PIN = 14; // IN3→PWM   Rear-Right
+constexpr uint8_t RR_PWM_PIN = 13; // IN3→PWM   Rear-Right
 constexpr uint8_t RR_DIR_PIN = 27; // IN4→DIR
 
 // ── Encoders (yellow = A, white = B) ────────
