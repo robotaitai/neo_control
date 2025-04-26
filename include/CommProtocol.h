@@ -28,6 +28,12 @@ public:
 
     /** try to read a command; returns true if a full packet arrived */
     static bool receiveCmd(Command &cmd);
+    
+    // incoming twist command: <V,lin,ang>\n
+    static bool receiveTwist(float &lin, float &ang);
+
+    // outgoing odometry: <O,x,y,th,v,om>\n
+    static void sendOdometry(float x, float y, float th, float v, float om);
 
 private:
     static HardwareSerial *_up;

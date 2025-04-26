@@ -8,15 +8,15 @@ constexpr uint8_t FR_DIR_PIN = 19; // IN2 → DIR for Front-Right
 constexpr bool FR_INVERT = true;
 
 // IN3/IN4 on the board drive Front-Left
-constexpr uint8_t FL_PWM_PIN = 17; // IN3 → PWM for Front-Left
-constexpr uint8_t FL_DIR_PIN = 16; // IN4 → DIR for Front-Left
+constexpr uint8_t FL_PWM_PIN = 16; // IN3 → PWM for Front-Left
+constexpr uint8_t FL_DIR_PIN = 17; // IN4 → DIR for Front-Left
 
 // ── Left Side (RL & RR) ──────────────────────
 constexpr uint8_t RL_PWM_PIN = 25; // IN1→PWM   Rear-Left
 constexpr uint8_t RL_DIR_PIN = 26; // IN2→DIR
 
-constexpr uint8_t RR_PWM_PIN = 27; // IN3→PWM   Rear-Right
-constexpr uint8_t RR_DIR_PIN = 14; // IN4→DIR
+constexpr uint8_t RR_PWM_PIN = 14; // IN3→PWM   Rear-Right
+constexpr uint8_t RR_DIR_PIN = 27; // IN4→DIR
 
 // ── Encoders (yellow = A, white = B) ────────
 constexpr uint8_t FL_ENC_A_PIN = 23; // FL A (yellow)

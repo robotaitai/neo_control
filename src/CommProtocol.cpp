@@ -41,3 +41,31 @@ bool CommProtocol::receiveCmd(Command &cmd)
     }
     return false;
 }
+
+bool CommProtocol::receiveTwist(float &lin, float &ang)
+{
+    static String buf;
+    while (_up->available())
+    {
+        char c = _up->read();
+        buf += c;
+        if (c == '\n')
+        {
+            if (buf.startsWith("<V") && buf.endsWith(">\n"))
+            {
+                if (sscanf(buf.c_str(), "<V,%f,%f>", &lin, &ang) == 2)
+                {
+                    buf = "";
+                    return true;
+                }
+            }
+            buf = "";
+        }
+    }
+    return false;
+}
+
+void CommProtocol::sendOdometry(float x, float y, float th, float v, float om)
+{
+    _up->printf("<O,%.3f,%.3f,%.3f,%.3f,%.3f>\n", x, y, th, v, om);
+}
