@@ -1,0 +1,42 @@
+┌───────────────────────────────────────────────────────────────┐
+│                      L298N Module #1                        │
+│                        (Left Side)                          │
+│                                                              
+│  +12 V (VM)  ──►  +12 V motor supply                          
+│  GND         ──►  GND      (tie to ESP32 GND & battery –)     
+│  5 V (Vcc)   ──►  onboard 5 V reg (jumper in place)           
+
+│  ENA, ENB jumpers tied HIGH (5 V) → channels always enabled   
+│                                                              
+│    IN1 ──► ESP32 GPIO18  (FL_PWM_PIN)   ← PWM for Front-Left  
+│    IN2 ──► ESP32 GPIO19  (FL_DIR_PIN)   ← DIR for Front-Left  
+│                                                              
+│    IN3 ──► ESP32 GPIO21  (RL_PWM_PIN)   ← PWM for Rear-Left   
+│    IN4 ──► ESP32 GPIO22  (RL_DIR_PIN)   ← DIR for Rear-Left   
+└───────────────────────────────────────────────────────────────┘
+
+┌───────────────────────────────────────────────────────────────┐
+│                      L298N Module #2                        │
+│                       (Right Side)                          │
+│                                                              
+│  +12 V (VM)  ──►  +12 V motor supply                          
+│  GND         ──►  GND      (tie to ESP32 GND & battery –)     
+│  5 V (Vcc)   ──►  onboard 5 V reg (jumper in place)           
+
+│  ENA, ENB jumpers tied HIGH (5 V) → channels always enabled   
+│                                                              
+│    IN1 ──► ESP32 GPIO16  (FR_PWM_PIN)   ← PWM for Front-Right 
+│    IN2 ──► ESP32 GPIO17  (FR_DIR_PIN)   ← DIR for Front-Right 
+│                                                              
+│    IN3 ──► ESP32 GPIO26  (RR_PWM_PIN)   ← PWM for Rear-Right  
+│    IN4 ──► ESP32 GPIO27  (RR_DIR_PIN)   ← DIR for Rear-Right  
+└───────────────────────────────────────────────────────────────┘
+
+┌───────────────────────────────────────────────────────────────┐
+│                    Common Connections                       │
+│                                                              
+│  ESP32 3.3 V  ──✕── do **not** power Vcc on L298N (they need 5 V)
+│  ESP32 GND    ──►─ common ground with both L298N GND’s and battery
+│                                                              
+│  (encoders + Jetson UART remain as before)                   
+└───────────────────────────────────────────────────────────────┘
